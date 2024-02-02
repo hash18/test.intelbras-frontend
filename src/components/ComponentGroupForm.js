@@ -63,7 +63,7 @@ const Form = ({ getComponentGroups, onEdit, setOnEdit }) => {
 
     if (onEdit) {
       await axios
-        .put(`http://localhost:3000/component-group/${onEdit.id}`, {
+        .patch(`http://localhost:3000/component-group/${onEdit.id}`, {
           name: componentgroup.name.value,
         })
         .then(({ data }) => toast.success(data))
