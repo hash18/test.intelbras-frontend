@@ -69,7 +69,7 @@ const CubagemComponent = () => {
       <h2>Informe os dados:</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          ID:
+          ID do Componente:
           <input type="number" value={id} onChange={(e) => setId(e.target.value)} />
         </label>
         <label>
