@@ -63,15 +63,15 @@ const Form = ({ getSegmentTypes, onEdit, setOnEdit }) => {
 
     if (onEdit) {
       await axios
-        .put(`http://localhost:3000/segment-type/${onEdit.id}`, {
-          name: segmenttype.segment_name.value,
+        .patch(`http://localhost:3000/segment-type/${onEdit.id}`, {
+          segment_name: segmenttype.segment_name.value,
         })
         .then(({ data }) => toast.success(data))
         .catch(({ data }) => toast.error(data));
     } else {
       await axios
         .post("http://localhost:3000/segment-type", {
-          name: segmenttype.segment_name.value,
+          segment_name: segmenttype.segment_name.value,
         })
         .then(({ data }) => toast.success(data))
         .catch(({ data }) => toast.error(data));
