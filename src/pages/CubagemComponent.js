@@ -1,5 +1,51 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+
+// Estilizando o componente de cubagem
+const StyledCubagemComponent = styled.div`
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+
+    label {
+      margin-bottom: 10px;
+    }
+
+    input {
+      margin-left: 5px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 5px;
+  }
+`;
 
 const CubagemComponent = () => {
   const [id, setId] = useState('');
@@ -19,7 +65,7 @@ const CubagemComponent = () => {
   };
 
   return (
-    <div>
+    <StyledCubagemComponent>
       <h2>Informe os dados:</h2>
       <form onSubmit={handleSubmit}>
         <label>
@@ -40,7 +86,7 @@ const CubagemComponent = () => {
           <p>Peso Líquido: {responseData.pesoLiquido}</p>
         </div>
       )}
-    </div>
+    </StyledCubagemComponent>
   );
 };
 

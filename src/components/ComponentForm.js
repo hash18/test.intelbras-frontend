@@ -83,7 +83,7 @@ const Form = ({ getComponents, onEdit, setOnEdit }) => {
 
     if (onEdit) {
       await axios
-        .put(`http://localhost:3000/component/${onEdit.id}`, {
+        .patch(`http://localhost:3000/component/${onEdit.id}`, {
           component_group_id: component.component_group_id.value,
           segment_type_id: component.segment_type_id.value,
           name: component.name.value,
