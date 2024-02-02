@@ -40,7 +40,7 @@ const Grid = ({ segmenttypes, setSegmentTypes, setOnEdit }) => {
 
   const handleDelete = async (id) => {
     await axios
-      .delete(`http://localhost:3000/segment-type/${id}`)
+      .patch(`http://localhost:3000/segment-type/soft-delete/${id}`)
       .then(({ data }) => {
         const newArray = segmenttypes.filter((segmenttype) => segmenttype.id !== id);
 

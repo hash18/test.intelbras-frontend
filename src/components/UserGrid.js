@@ -40,7 +40,7 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
 
   const handleDelete = async (id) => {
     await axios
-      .delete(`http://localhost:3000/user/${id}`)
+      .patch(`http://localhost:3000/soft-delete/${id}`)
       .then(({ data }) => {
         const newArray = users.filter((user) => user.id !== id);
 

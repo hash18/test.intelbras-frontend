@@ -40,7 +40,7 @@ const Grid = ({ componentgroups, setComponentGroups, setOnEdit }) => {
 
   const handleDelete = async (id) => {
     await axios
-      .delete(`http://localhost:3000/component-group/${id}`)
+      .patch(`http://localhost:3000/component-group/soft-delete/${id}`)
       .then(({ data }) => {
         const newArray = componentgroups.filter((componentgroup) => componentgroup.id !== id);
 
